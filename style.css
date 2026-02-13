@@ -1,0 +1,33 @@
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --gold: #C5A059;
+  --border: #e4e4e4;
+  --muted: #aaaaaa;
+  --font: 'Montserrat', sans-serif;
+  --trans: background .18s, color .18s;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text: #ffffff;
+  --border: #1f1f1f;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); transition: var(--trans); }
+
+/* LOGIN */
+#loginPage { position:fixed; inset:0; background:var(--bg); z-index:999; display:flex; }
+#loginPage.gone { display:none; }
+.ll { flex:1; background:var(--text); color:var(--bg); padding:60px; display:flex; flex-direction:column; justify-content:center; }
+.ll-logo { font-size:52px; font-weight:700; }
+.lr { width:440px; padding:60px; border-left:1px solid var(--border); background:var(--bg); display:flex; flex-direction:column; justify-content:center; }
+
+/* APP LAYOUT */
+#app { display:none; }
+#app.on { display:flex; min-height:100vh; }
+.sidebar { width:220px; border-right:1px solid var(--border); padding:20px; }
+.main { flex:1; border-right:1px solid var(--border); }
+.post { padding:20px; border-bottom:1px solid var(--border); display:flex; gap:15px; }
+.av { width:40px; height:40px; background:var(--text); color:var(--bg); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; }
