@@ -54,3 +54,36 @@ body {
     outline: 4px solid #fff;
     outline-offset: -4px;
 }
+
+.composer {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--accent);
+    padding: 1rem;
+    resize: none;
+    height: 80px;
+}
+
+.interactions button {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.search-box input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    color: var(--text);
+    padding: 5px;
+    margin-bottom: 1rem;
+}
