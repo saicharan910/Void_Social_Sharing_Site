@@ -3,44 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOID</title>
+    <title>VOID — Signal over Noise</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="midnight-theme">
+<body class="midnight">
     <header class="app-header">
-        <div class="header-content">
+        <div class="header-inner">
             <div class="logo" onclick="location.reload()">VOID</div>
-            <div class="search-container">
-                <input type="text" id="main-search" placeholder="Search profiles or thoughts..." onkeyup="handleSearch()">
-            </div>
-            <div class="header-actions">
-                <button onclick="toggleTheme()" class="theme-toggle">🌗</button>
+            <div class="search-bar">
+                <input type="text" id="global-search" placeholder="Search perspectives..." onkeyup="handleSearch()">
             </div>
         </div>
     </header>
 
-    <div class="centered-container">
-        <section class="opinion-box">
-            <textarea id="opinion-input" placeholder="Share your perspective..."></textarea>
-            <div class="opinion-footer">
-                <div class="media-upload">
-                    <input type="file" id="media-file" hidden onchange="previewMedia()">
-                    <label for="media-file" class="upload-btn">Add Image</label>
+    <main class="main-content">
+        <section class="composer">
+            <textarea id="post-text" placeholder="Share your perspective, Charan..."></textarea>
+            <div class="composer-footer">
+                <div class="media-input">
+                    <input type="file" id="image-input" hidden onchange="handleImagePreview()">
+                    <label for="image-input" class="action-label">Attach Perspective</label>
                 </div>
-                <button class="post-btn" onclick="executePost()">Post to Void</button>
+                <button class="post-btn" onclick="submitPost()">Post to Void</button>
             </div>
         </section>
 
         <div id="feed-root"></div>
-    </div>
+    </main>
 
     <nav class="bottom-nav">
-        <div class="nav-links">
-            <button class="nav-icon" onclick="switchView('home')">Home</button>
-            <button class="nav-icon" onclick="switchView('explore')">Explore</button>
-            <div class="profile-nav" onclick="openMyProfile()">
-                <img src="https://api.dicebear.com/7.x/initials/svg?seed=Charan" class="nav-avatar">
-                <span>Profile</span>
+        <div class="nav-container">
+            <div class="nav-item" onclick="location.reload()">Home</div>
+            <div class="nav-item" onclick="toggleStalk()">Stalk</div>
+            <div class="profile-tab" onclick="openMyProfile()">
+                <img src="https://api.dicebear.com/7.x/initials/svg?seed=Charan" class="avatar-sm">
+                <span>My Space</span>
             </div>
         </div>
     </nav>
