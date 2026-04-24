@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Void // Social</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="app">
-        <aside class="sidebar">
-            <input type="text" id="search-bar" placeholder="Search profiles..." onkeyup="searchProfiles()">
-            <div id="search-results"></div>
-        </aside>
+<body class="dark-mode">
+    <div id="void-app">
+        <nav class="sidebar">
+            <div class="brand">VOID</div>
+            <div class="search-box">
+                <input type="text" id="profile-search" placeholder="Search profiles..." onkeyup="handleSearch()">
+            </div>
+            <ul class="nav-links">
+                <li onclick="switchView('timeline')">Timeline</li>
+                <li onclick="toggleStalkMode()" id="stalk-btn">Stalk Mode: Off</li>
+            </ul>
+            <div id="active-user-badge"></div>
+        </nav>
 
-        <main>
+        <main class="content-area">
+            <header>
+                <h1 id="page-title">Timeline</h1>
+                <button onclick="toggleTheme()">🌗</button>
+            </header>
+            
             <section class="composer">
-                <textarea id="post-input" placeholder="Share a thought..."></textarea>
-                <button onclick="createPost()">Post to Void</button>
+                <textarea id="new-post-text" placeholder="Share a thought..."></textarea>
+                <button onclick="executePost()">Post</button>
             </section>
 
-            <div id="feed">
-                </div>
+            <section id="feed-root"></section>
         </main>
-
-        <aside class="messages-panel">
-            <h3>Direct Messages</h3>
-            <div id="chat-box"></div>
-            <input type="text" id="msg-input" placeholder="Type a message...">
-            <button onclick="sendDM()">Send</button>
-        </aside>
     </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
