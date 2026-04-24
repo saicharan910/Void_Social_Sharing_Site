@@ -3,47 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOID — Signal over Noise</title>
+    <title>VOID</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
 </head>
-<body class="dark-mode">
-    <div id="void-app">
-        <header class="main-nav">
-            <div class="brand-logo" onclick="switchView('timeline')">VOID</div>
-            <div class="nav-right">
-                <input type="text" id="global-search" placeholder="Search signal..." onkeyup="handleSearch()">
-                <button onclick="toggleTheme()" class="icon-btn">🌗</button>
+<body class="midnight-theme">
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo" onclick="location.reload()">VOID</div>
+            <div class="search-container">
+                <input type="text" id="main-search" placeholder="Search profiles or thoughts..." onkeyup="handleSearch()">
             </div>
-        </header>
-
-        <main class="content-wrapper">
-            <section class="composer-card">
-                <div class="composer-header">
-                    <img src="https://api.dicebear.com/7.x/initials/svg?seed=Charan" class="mini-avatar">
-                    <textarea id="post-input" placeholder="What's your perspective, Charan?"></textarea>
-                </div>
-                <div class="composer-actions">
-                    <label class="file-label">
-                        <input type="file" id="image-upload" accept="image/*" hidden>
-                        <span>🖼️ Add Image</span>
-                    </label>
-                    <button class="primary-btn" onclick="executePost()">Post to Void</button>
-                </div>
-            </section>
-
-            <div id="feed-root"></div>
-        </main>
-
-        <footer class="bottom-bar">
-            <div class="nav-item" onclick="switchView('timeline')">🏠</div>
-            <div class="nav-item" onclick="toggleStalkMode()" id="stalk-btn">🎯</div>
-            <div class="nav-profile" onclick="openMyProfile()">
-                <img src="https://api.dicebear.com/7.x/initials/svg?seed=Charan" alt="Profile" class="avatar-icon">
-                <span class="profile-label">My Space</span>
+            <div class="header-actions">
+                <button onclick="toggleTheme()" class="theme-toggle">🌗</button>
             </div>
-        </footer title="Navigation">
+        </div>
+    </header>
+
+    <div class="centered-container">
+        <section class="opinion-box">
+            <textarea id="opinion-input" placeholder="Share your perspective..."></textarea>
+            <div class="opinion-footer">
+                <div class="media-upload">
+                    <input type="file" id="media-file" hidden onchange="previewMedia()">
+                    <label for="media-file" class="upload-btn">Add Image</label>
+                </div>
+                <button class="post-btn" onclick="executePost()">Post to Void</button>
+            </div>
+        </section>
+
+        <div id="feed-root"></div>
     </div>
+
+    <nav class="bottom-nav">
+        <div class="nav-links">
+            <button class="nav-icon" onclick="switchView('home')">Home</button>
+            <button class="nav-icon" onclick="switchView('explore')">Explore</button>
+            <div class="profile-nav" onclick="openMyProfile()">
+                <img src="https://api.dicebear.com/7.x/initials/svg?seed=Charan" class="nav-avatar">
+                <span>Profile</span>
+            </div>
+        </div>
+    </nav>
 
     <script src="data.js"></script>
     <script src="app.js"></script>
