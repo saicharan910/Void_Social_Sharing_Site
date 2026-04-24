@@ -1,61 +1,74 @@
 :root {
-    --bg: #050505;
-    --card: #121212;
+    --bg: #000000;
+    --card: #0a0a0a;
+    --border: #1a1a1a;
     --text: #ffffff;
-    --dim-text: #888888;
+    --dim: #a0a0a0;
     --accent: #ffffff;
-    --radius: 14px;
-    --border: #222222;
+    --radius: 18px;
 }
 
 body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Inter', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
-    padding-bottom: 80px; /* Space for bottom bar */
+    line-height: 1.6;
 }
 
-/* Void Logo Branding */
-.brand-logo {
-    font-weight: 800;
-    letter-spacing: 4px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: 0.3s;
+/* Centering Logic */
+.centered-container {
+    max-width: 680px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.brand-logo:hover { opacity: 0.7; }
-
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 10%;
+/* Header Styling */
+.app-header {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
-    background: rgba(5, 5, 5, 0.8);
-    backdrop-filter: blur(10px);
     z-index: 100;
 }
 
-/* Professional Composer */
-.composer-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    margin: 2rem auto;
-    max-width: 600px;
-    border: 1px solid var(--border);
-}
-
-.composer-header {
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
     display: flex;
-    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
 }
 
-#post-input {
+.logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    cursor: pointer;
+}
+
+.search-container input {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 250px;
+    transition: 0.3s;
+}
+
+/* Opinion Box (Composer) */
+.opinion-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+textarea {
     width: 100%;
     background: transparent;
     border: none;
@@ -63,68 +76,68 @@ body {
     font-size: 1.1rem;
     resize: none;
     outline: none;
+    min-height: 100px;
 }
 
-.composer-actions {
+.opinion-footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 15px;
-    padding-top: 15px;
     border-top: 1px solid var(--border);
+    padding-top: 15px;
 }
 
-.primary-btn {
+.post-btn {
     background: var(--accent);
     color: #000;
     border: none;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 700;
     cursor: pointer;
 }
 
-/* Bottom Profile Bar */
-.bottom-bar {
+/* Post Cards */
+.post {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: transform 0.2s ease;
+}
+
+.post:hover { border-color: #333; }
+
+/* Bottom Nav */
+.bottom-nav {
     position: fixed;
     bottom: 0;
     width: 100%;
     background: var(--card);
+    border-top: 1px solid var(--border);
+    padding: 12px 0;
+}
+
+.nav-links {
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 0;
-    border-top: 1px solid var(--border);
-    z-index: 1000;
 }
 
-.avatar-icon {
-    width: 32px;
-    height: 32px;
+.nav-avatar {
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    border: 2px solid var(--accent);
+    margin-right: 8px;
 }
 
-.nav-profile {
+.profile-nav {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    font-size: 10px;
     cursor: pointer;
-}
-
-/* Post Styling */
-.post {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    margin: 1rem auto;
-    max-width: 600px;
-    border: 1px solid var(--border);
-}
-
-.post img {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 10px;
-    filter: grayscale(100%); /* Minimalist aesthetic */
+    font-size: 14px;
 }
