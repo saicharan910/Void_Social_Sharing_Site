@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void // Minimalist Social</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div id="void-app">
+        <nav class="sidebar">
+            <div class="brand">VOID</div>
+            <ul class="nav-links">
+                <li onclick="setView('timeline')">Timeline</li>
+                <li onclick="setView('messages')">Messages</li>
+                <li onclick="toggleStalkMode()" id="stalk-btn">Stalk Mode: Off</li>
+            </ul>
+            <div id="active-user-badge"></div>
+        </nav>
+
+        <main class="content-area">
+            <header>
+                <h1 id="page-title">Timeline</h1>
+                <button onclick="toggleTheme()" class="theme-toggle">🌗</button>
+            </header>
+            <section id="feed-root"></section>
+        </main>
+
+        <aside class="stats-panel">
+            <div class="card">
+                <h3>System Signal</h3>
+                <div id="signal-meter">0%</div>
+            </div>
+            <div class="card">
+                <h3>Quick Swap</h3>
+                <div class="persona-list">
+                    <button onclick="switchUser('elena')">Elena</button>
+                    <button onclick="switchUser('kai')">Kai</button>
+                    <button onclick="switchUser('sol')">Sol</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
